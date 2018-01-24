@@ -7,13 +7,22 @@ class Kiosk {
     this.orderList = isOrdering ? new Map( JSON.parse( localStorage.getItem( "orderList" ) ) ) : new Map();
     this.cash = isOrdering ? parseInt( localStorage.getItem( "cash" ) ) : 0;
     this.myWallet = isOrdering ? parseInt( localStorage.getItem( "myWallet" ) ) : 20000;
+    
+    this.addMenu = this.addMenu.bind(this);
+    this.removeMenu = this.removeOrderList.bind(this);
+    this.minusMenu = this.minusMenu.bind(this);
+    this.orderMenu = this.orderMenu.bind(this);
+    this.addCash = this.addCash.bind(this);
+    this.removeOrderList = this.removeOrderList.bind(this);
+    this.renderScreen = this.renderScreen.bind(this);
+    this.randomizeMenu = this.randomizeMenu.bind(this);
+    this.updateMenu = this.updateMenu.bind(this);
 
     document.getElementById( 'wallet' ).value = this.cash;
     this.randomizeMenu( isOrdering );
     this.updateMenu();
     this.renderScreen();
     document.getElementById( 'reset_button' ).onclick = this.removeMenu;
-    
     document.getElementById( 'order_button' ).onclick = this.orderMenu;
     [ ...document.getElementsByClassName( 'cash' ) ].forEach( cashButton => { 
         cashButton.addEventListener( 'click', 
@@ -114,7 +123,6 @@ class Kiosk {
     const screen = document.getElementById( 'order_screen' );
     while ( screen.hasChildNodes() ) 
       screen.removeChild( screen.firstChild ); 
-
 
   }
 
