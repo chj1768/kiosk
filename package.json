@@ -1,0 +1,25 @@
+{
+  "name": "homework",
+  "version": "1.0.0",
+  "description": "과ㅡ제",
+  "main": "bundle.js",
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "css-loader": "^0.28.7",
+    "style-loader": "^0.19.0"
+  },
+  "devDependencies": {},
+   "scripts": {
+    "start": "webpack-dev-server --host 0.0.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "homework"
+  },
+  "keywords": [
+    "homework"
+  ],
+  "author": "choihyeonji",
+  "license": "ISC"
+}
